@@ -8,6 +8,7 @@ export class MessagePort {
     public sms_port_id: number;
     public campaign_name: string;
     public sms_port_name: string;
+    public is_connected: boolean;
     public created_at: string;
     public updated_at: string;
     constructor() {

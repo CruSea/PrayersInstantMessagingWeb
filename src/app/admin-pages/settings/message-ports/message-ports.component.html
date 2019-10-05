@@ -28,10 +28,11 @@
               <table class="table">
                 <thead class=" text-primary">
                 <th> ID </th>
-                <th> Full Name </th>
-                <th> Email </th>
-                <th> Phone </th>
-                <th> Status </th>
+                <th> Port </th>
+                <th> API KEY </th>
+                <th> Campaign </th>
+                <th> Port Name </th>
+                <th> Is Connected </th>
                 <th> Created At </th>
                 <th> </th>
                 </thead>
@@ -39,18 +40,22 @@
                 <tr *ngFor="let messagePort of paginated_message_ports.data; let i = index">
                   <td> {{paginated_message_ports.from + i}} </td>
                   <td> {{messagePort.name}} </td>
-                  <td> {{messagePort.api_key}} </td>
-                  <td> {{messagePort.campaign_name}} </td>
-                  <td> {{messagePort.sms_port_name}} </td>
+                  <td> {{messagePort.api_key.substr(0, 10)}} </td>
+                  <td>{{getCampaignName(messagePort.api_key, messagePort.campaign_id)}}</td>
+                  <td>{{getSmsPortName(messagePort.api_key, messagePort.sms_port_id)}}</td>
+                  <td> {{messagePort.is_connected}} </td>
                   <td class="text-primary"> {{messagePort.created_at | date: 'short'}} </td>
                   <td class="td-actions">
+                    <button mat-raised-button type="button" (click)="connectPort(messagePort)" matTooltip="Connect" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                      <i class="material-icons">settings_input_component</i>
+                    </button>
                     <button mat-raised-button type="button" matTooltip="Edit"
-                            [matTooltipPosition]="'above'"
+                            [matTooltipPosition]="'above'" (click)="updateUserDialog(messagePort)"
                             class="btn btn-danger btn-link btn-sm btn-just-icon">
                       <i class="material-icons">edit</i>
                     </button>
                     <button mat-raised-button type="button" matTooltip="Remove"
-                            [matTooltipPosition]="'above'"
+                            [matTooltipPosition]="'above'" (click)="deleteMessagePort(messagePort)"
                             class="btn btn-danger btn-link btn-sm btn-just-icon">
                       <i class="material-icons">close</i>
                     </button>

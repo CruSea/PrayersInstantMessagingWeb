@@ -14,8 +14,14 @@ export class SentMessagesComponent implements OnInit {
   constructor(private sentMessagesService: SentMessagesService) { }
 
   ngOnInit() {
+    this.updateSentMessagesComponent();
+    this.sentMessagesService.PaginatedSentMessagesEmitter.subscribe(
+        data => {this.paginated_sent_messages = data;}
+    );
   }
-
+  public updateSentMessagesComponent() {
+    this.sentMessagesService.getPaginatedSentMessages();
+  }
   public updatePaginatedSentMessagesData(event: any) {
     this.loading = true;
     const page_num = event.pageIndex + 1;

@@ -55,7 +55,7 @@ export class MessagePortsService {
         return this.httpService.sendPostRequest('message_port?token=' + this.authService.getUserToken(), port_data, new_header);
     }
 
-    public updateMessage(port_data: MessagePort) {
+    public updateMessagePort(port_data: MessagePort) {
         const new_header = new Headers();
         return this.httpService.sendPatchRequest('message_port?token=' + this.authService.getUserToken(), port_data, new_header);
     }

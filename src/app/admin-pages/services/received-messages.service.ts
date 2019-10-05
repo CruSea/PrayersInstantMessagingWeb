@@ -20,7 +20,7 @@ export class ReceivedMessagesService {
                     this.processGetPaginatedReceivedMessages(data);
                 },
                 error => {
-                    console.log(error);
+                    console.log('some error', error);
                 },
             );
     }

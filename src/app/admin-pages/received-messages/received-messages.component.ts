@@ -16,8 +16,15 @@ export class ReceivedMessagesComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.updateReceivedMessageComponent();
+        this.receivedMessagesService.PaginatedReceivedMessagesEmitter.subscribe(
+            data => {this.paginated_received_messages = data; }
+        );
     }
 
+    public updateReceivedMessageComponent() {
+        this.receivedMessagesService.getPaginatedReceivedMessages();
+    }
     public updatePaginatedReceivedMessagesData(event: any) {
         this.loading = true;
         const page_num = event.pageIndex + 1;
