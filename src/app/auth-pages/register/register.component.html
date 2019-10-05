@@ -1,0 +1,45 @@
+<br>
+<br>
+<br>
+<br>
+<div class="main-content">
+  <form class="form-signin card card-profile" (submit)="registerUser()">
+    <div class="card-avatar">
+      <a href="#pablo">
+        <img class="img" src="./assets/img/media_negarit_back_logo.png" />
+      </a>
+    </div>
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Create Media Negarit Account</h1>
+    </div>
+    <div class="form-label-group">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Company Name" [(ngModel)]="new_register_user.company_name" name="company_name">
+      </mat-form-field>
+    </div>
+    <div class="form-label-group">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Full Name" [(ngModel)]="new_register_user.full_name" name="full_name">
+      </mat-form-field>
+    </div>
+    <div class="form-label-group">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" [(ngModel)]="new_register_user.email" name="user_email">
+      </mat-form-field>
+    </div>
+    <div class="form-label-group">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Phone" [(ngModel)]="new_register_user.phone" name="user_phone">
+      </mat-form-field>
+    </div>
+    <div class="form-label-group">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" type="password" [(ngModel)]="new_register_user.password" name="user_password">
+      </mat-form-field>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    <a [routerLink]="['/auth/login']">Login Now</a>
+    <div class="mt-5 mb-3 text-muted text-center"><a href="http://negarit.net">Powered By Negarit</a> <br> © 2019-2020</div>
+  </form>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '5px' }"></ngx-loading>

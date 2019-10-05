@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>New System User</h1>
+<div mat-dialog-content>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Full Name" type="text" [(ngModel)]="new_user.full_name" name="full_name">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" type="email" [(ngModel)]="new_user.email" name="email">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Phone" type="text" [(ngModel)]="new_user.phone" name="phone">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" type="password" [(ngModel)]="new_user.password" name="password">
+    </mat-form-field>
+  </div>
+  <br>
+  <div class="form-label-group">
+    <button mat-raised-button (click)="onSave()" class="btn btn-primary pull-right">Save User</button>
+    <button mat-raised-button (click)="onClose()" class="btn btn-default pull-left">Cancel</button>
+  </div>
+</div>

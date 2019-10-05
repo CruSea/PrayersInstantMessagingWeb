@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Update User</h1>
+<div mat-dialog-content>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Full Name" type="text" [(ngModel)]="selected_user.full_name" name="full_name">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" type="email" [(ngModel)]="selected_user.email" name="email">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Phone" type="text" [(ngModel)]="selected_user.phone" name="phone">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field>
+      <mat-select placeholder="User Role" [(ngModel)]="selected_user.role_id" name="role_id">
+        <mat-option *ngFor="let user_role of user_roles_list" [value]="user_role.id">
+          {{user_role.display_name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <br>
+  <div class="form-label-group">
+    <button mat-raised-button (click)="onSave()" class="btn btn-primary pull-right">Update User</button>
+    <button mat-raised-button (click)="onClose()" class="btn btn-default pull-left">Cancel</button>
+  </div>
+</div>
