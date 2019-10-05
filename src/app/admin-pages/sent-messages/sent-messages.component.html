@@ -1,3 +1,65 @@
-<p>
-  sent-messages works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="card">
+          <div class="card-header card-header-tabs card-header-primary">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <span class="nav-tabs-title">Sent Messages:</span>
+                <ul class="nav nav-tabs pull-right" data-tabs="tabs">
+                  <li class="nav-item pull-right">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <mat-paginator [length]="paginated_sent_messages.total"
+                             [pageSize]="paginated_sent_messages.per_page"
+                             [pageSizeOptions]="pageSizeOptions"
+                             (page)="updatePaginatedSentMessagesData($event)">
+              </mat-paginator>
+              <table class="table">
+                <thead class=" text-primary">
+                <th> ID </th>
+                <th> Message </th>
+                <th> Phone </th>
+                <th> Created At </th>
+                <th> </th>
+                </thead>
+                <tbody>
+                <tr *ngFor="let sent_message of paginated_sent_messages.data; let i = index">
+                  <td> {{paginated_sent_messages.from + i}} </td>
+                  <td> {{sent_message.message}} </td>
+                  <td> {{sent_message.phone}} </td>
+                  <td class="text-primary"> {{sent_message.created_at | date: 'short'}} </td>
+                  <td class="td-actions">
+                    <button mat-raised-button type="button" matTooltip="Edit"
+                            [matTooltipPosition]="'above'"
+                            class="btn btn-danger btn-link btn-sm btn-just-icon">
+                      <i class="material-icons">edit</i>
+                    </button>
+                    <button mat-raised-button type="button" matTooltip="Remove"
+                            [matTooltipPosition]="'above'"
+                            class="btn btn-danger btn-link btn-sm btn-just-icon">
+                      <i class="material-icons">close</i>
+                    </button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <mat-paginator [length]="paginated_sent_messages.total"
+                             [pageSize]="paginated_sent_messages.per_page"
+                             [pageSizeOptions]="pageSizeOptions"
+                             (page)="updatePaginatedSentMessagesData($event)">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '5px' }"></ngx-loading>

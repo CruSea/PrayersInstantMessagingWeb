@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>New Negarit Port</h1>
+<div mat-dialog-content>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Port Name" [(ngModel)]="new_negarit_port.name" name="name">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="API Key" [(ngModel)]="new_negarit_port.api_key" name="api_key" (change)="updateApiChanges()">
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field>
+      <mat-select placeholder="Campaign" [(ngModel)]="new_negarit_port.campaign_id" name="campaign_id">
+        <mat-option *ngFor="let campaign of negarit_campaigns" [value]="campaign.id">
+          {{campaign.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field>
+      <mat-select placeholder="SMS Port" [(ngModel)]="new_negarit_port.sms_port_id" name="sms_port_id">
+        <mat-option *ngFor="let smsPort of negarit_sms_ports" [value]="smsPort.id">
+          {{smsPort.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <br>
+  <div class="form-label-group">
+    <button mat-raised-button (click)="addNewNegaritPort()" class="btn btn-primary pull-right">Create Message Port</button>
+    <button mat-raised-button (click)="cancel()" class="btn btn-default pull-left">Cancel</button>
+  </div>
+</div>
+<div class="my-container">
+  <ngx-loading [show]="is_loading" [config]="{ backdropBorderRadius: '0px' }"></ngx-loading>
+</div>

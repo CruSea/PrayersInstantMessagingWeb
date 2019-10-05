@@ -34,6 +34,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {NgxLoadingModule} from 'ngx-loading';
 import {NewUserDialogComponent} from './users/new-user-dialog/new-user-dialog.component';
 import {UpdateUserDialogComponent} from './users/update-user-dialog/update-user-dialog.component';
+import {MessagePortsComponent} from './settings/message-ports/message-ports.component';
+import {NewMessagePortDialogComponent} from './settings/message-ports/new-message-port-dialog/new-message-port-dialog.component';
+import {UpdateMessagePortDialogComponent} from './settings/message-ports/update-message-port-dialog/update-message-port-dialog.component';
 
 @NgModule({
     imports: [
@@ -68,8 +71,9 @@ import {UpdateUserDialogComponent} from './users/update-user-dialog/update-user-
         NgxLoadingModule.forRoot({}),
     ],
     declarations: [DashboardsComponent, UsersComponent, SentMessagesComponent, ReceivedMessagesComponent, SettingsComponent,
-        NewUserDialogComponent, UpdateUserDialogComponent],
-    entryComponents: [NewUserDialogComponent, UpdateUserDialogComponent]
+        NewUserDialogComponent, UpdateUserDialogComponent, MessagePortsComponent, NewMessagePortDialogComponent,
+        UpdateMessagePortDialogComponent],
+    entryComponents: [NewUserDialogComponent, UpdateUserDialogComponent, NewMessagePortDialogComponent, UpdateMessagePortDialogComponent]
 })
 export class AdminPagesModule {
 }

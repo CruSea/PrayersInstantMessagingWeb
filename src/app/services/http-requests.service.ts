@@ -5,7 +5,10 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpRequestsService {
+  public root_negarit_url = 'https://api.negarit.net/api/'; // BENGEOS LOCAL SERVER
   // public root_url = 'https://api.media.negarit.net/'; // Agelgel Production Server
+
+
   public root_url = 'http://127.0.0.1:8000/'; // BENGEOS Local Server
   public api_root_url = this.root_url + 'api/';
 
@@ -37,5 +40,12 @@ export class HttpRequestsService {
   }
   public getApiRootUrl() {
     return this.api_root_url;
+  }
+
+  public sendGetRequestToNegarit(routeName) {
+    return this.httpRequest.get(this.root_negarit_url + routeName);
+  }
+  public sendPostRequestToNegarit(routeName, body, header) {
+    return this.httpRequest.post(this.root_negarit_url + routeName, body, header);
   }
 }

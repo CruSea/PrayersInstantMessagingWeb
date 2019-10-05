@@ -17,13 +17,11 @@ export class LoginUser {
     }
 }
 export class RegisterUser {
-    public company_name: string;
     public full_name: string;
     public email: string;
     public phone: string;
     public password: string;
     constructor() {
-        this.company_name = '';
         this.full_name = '';
         this.email = '';
         this.phone = '';
