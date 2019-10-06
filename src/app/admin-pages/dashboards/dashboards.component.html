@@ -1,3 +1,79 @@
-<p>
-  dashboards works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-warning card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">mail_outline</i>
+            </div>
+            <p class="card-category">Registered Prayers</p>
+            <h3 class="card-title">{{dashboard_data.prayers_count}}
+              <small>SMS</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">date_range</i>
+              <a>Registered Prayers Count</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-success card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">textsms</i>
+            </div>
+            <p class="card-category">Active Prayers</p>
+            <h3 class="card-title">{{dashboard_data.active_prayers_count}}
+              <small>Active Prayers Count</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">date_range</i>Today`s Received Messages
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-danger card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">call_made</i>
+            </div>
+            <p class="card-category">Total Sent</p>
+            <h3 class="card-title">{{dashboard_data.active_prayers_count}}
+              <small>SMS</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">local_offer</i> Total Sent Messages
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">call_received</i>
+            </div>
+            <p class="card-category">Total Received</p>
+            <h3 class="card-title">{{dashboard_data.prayers_count}}
+              <small>SMS</small>
+            </h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i>Total Received Messages
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
