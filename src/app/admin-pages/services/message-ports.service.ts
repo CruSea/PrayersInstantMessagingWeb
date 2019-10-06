@@ -22,6 +22,22 @@ export class MessagePortsService {
         const new_header = new Headers();
         return this.httpService.sendPostRequestToNegarit('api_request/on_received_message_action', web_hook, new_header);
     }
+    public getMessagePortList() {
+        return this.httpService.sendGetRequest('message_ports?token=' + this.authService.getUserToken())
+            .subscribe(
+                data => {
+                    this.processGetMessagePortList(data);
+                },
+                error => {
+                    console.log(error);
+                },
+            );
+    }
+    private processGetMessagePortList(message_data) {
+        if (message_data && message_data.status && message_data.result) {
+            this.MessagePortListEmitter.emit(message_data.result);
+        }
+    }
 
     public getPaginatedMessagePort() {
         return this.httpService.sendGetRequest('message_ports_paginated?token=' + this.authService.getUserToken())

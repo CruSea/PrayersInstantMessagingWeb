@@ -154,7 +154,8 @@ export class MessagePortsComponent implements OnInit {
         newWebHook.name = 'Prayers Negarit Hook';
         newWebHook.API_KEY = message_port.api_key;
         newWebHook.sms_port_id = message_port.sms_port_id;
-        newWebHook.action_url = 'https://api.instant.negarit.net/api/negarit_hook';
+        // newWebHook.action_url = 'https://api.instant.negarit.net/api/negarit_hook';
+        newWebHook.action_url = 'http://3c766e68.ngrok.io/api/negarit_web_hook';
         this.messagePortService.sendWebHook(newWebHook).subscribe(
             data => {
                 console.log('Negarit-Webhook', data);

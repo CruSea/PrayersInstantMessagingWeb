@@ -37,6 +37,9 @@ import {UpdateUserDialogComponent} from './users/update-user-dialog/update-user-
 import {MessagePortsComponent} from './settings/message-ports/message-ports.component';
 import {NewMessagePortDialogComponent} from './settings/message-ports/new-message-port-dialog/new-message-port-dialog.component';
 import {UpdateMessagePortDialogComponent} from './settings/message-ports/update-message-port-dialog/update-message-port-dialog.component';
+import {RegisteredPrayersComponent} from './registered-prayers/registered-prayers.component';
+import {SentPrayersComponent} from './sent-prayers/sent-prayers.component';
+import {NewPrayerMessageDialogComponent} from './sent-prayers/new-prayer-message-dialog/new-prayer-message-dialog.component';
 
 @NgModule({
     imports: [
@@ -72,8 +75,12 @@ import {UpdateMessagePortDialogComponent} from './settings/message-ports/update-
     ],
     declarations: [DashboardsComponent, UsersComponent, SentMessagesComponent, ReceivedMessagesComponent, SettingsComponent,
         NewUserDialogComponent, UpdateUserDialogComponent, MessagePortsComponent, NewMessagePortDialogComponent,
-        UpdateMessagePortDialogComponent],
-    entryComponents: [NewUserDialogComponent, UpdateUserDialogComponent, NewMessagePortDialogComponent, UpdateMessagePortDialogComponent]
+        UpdateMessagePortDialogComponent,
+        RegisteredPrayersComponent,
+        SentPrayersComponent,
+        NewPrayerMessageDialogComponent],
+    entryComponents: [NewUserDialogComponent, UpdateUserDialogComponent, NewMessagePortDialogComponent, UpdateMessagePortDialogComponent,
+        NewPrayerMessageDialogComponent]
 })
 export class AdminPagesModule {
 }

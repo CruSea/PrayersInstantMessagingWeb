@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>Prayer Message</h1>
+<div mat-dialog-content>
+  <div class="form-label-group">
+    <mat-form-field class="example-full-width">
+      <textarea rows="5" matInput placeholder="Prayer Message" [(ngModel)]="new_prayer_message.message" name="name"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field>
+      <mat-select placeholder="Message Port" [(ngModel)]="new_prayer_message.message_port_id" name="message_port_id">
+        <mat-option *ngFor="let messagePort of message_port_list" [value]="messagePort.id">
+          {{messagePort.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field>
+      <mat-select placeholder="Location" [(ngModel)]="new_prayer_message.location" name="location">
+        <mat-option [value]="null">NONE</mat-option>
+        <mat-option *ngFor="let location of prayers_locations" [value]="location.location">
+          {{location.location}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-label-group">
+    <mat-form-field>
+      <mat-select placeholder="Language" [(ngModel)]="new_prayer_message.language" name="language">
+        <mat-option [value]="null">NONE</mat-option>
+        <mat-option *ngFor="let language of prayers_languages" [value]="language.language">
+          {{language.language}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <br>
+  <div class="form-label-group">
+    <button mat-raised-button (click)="addNewNegaritPort()" class="btn btn-primary pull-right">Create Prayer Message</button>
+    <button mat-raised-button (click)="cancel()" class="btn btn-default pull-left">Cancel</button>
+  </div>
+</div>
+<div class="my-container">
+  <ngx-loading [show]="is_loading" [config]="{ backdropBorderRadius: '0px' }"></ngx-loading>
+</div>
