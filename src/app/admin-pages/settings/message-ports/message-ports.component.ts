@@ -151,7 +151,7 @@ export class MessagePortsComponent implements OnInit {
     public connectPort(message_port: MessagePort) {
         this.loading = true;
         const newWebHook = new WebHook();
-        newWebHook.name = 'Prayers Negarit Hook';
+        newWebHook.name = 'Prayers Agelgel Hook';
         newWebHook.API_KEY = message_port.api_key;
         newWebHook.sms_port_id = message_port.sms_port_id;
         newWebHook.action_url = 'https://api.prayers.agelgel.net/api/negarit_web_hook';
