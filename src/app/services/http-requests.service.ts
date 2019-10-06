@@ -6,10 +6,10 @@ import {HttpClient} from '@angular/common/http';
 })
 export class HttpRequestsService {
   public root_negarit_url = 'https://api.negarit.net/api/'; // BENGEOS LOCAL SERVER
-  // public root_url = 'https://api.media.negarit.net/'; // Agelgel Production Server
+  public root_url = 'https://api.prayers.agelgel.net/'; // Agelgel Production Server
 
 
-  public root_url = 'http://127.0.0.1:8000/'; // BENGEOS Local Server
+  // public root_url = 'http://127.0.0.1:8000/'; // BENGEOS Local Server
   public api_root_url = this.root_url + 'api/';
 
   constructor(private httpRequest: HttpClient) { }
